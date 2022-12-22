@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       di.getIt.get<RandomRgbColorGenerator>();
   RgbColor backgroundColor = di.getIt.get<RandomRgbColorGenerator>().generate();
 
-  void _incrementCounter() {
+  void _onTapHandler() {
     setState(() {
       backgroundColor = colorGenerator.generate();
     });
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _incrementCounter,
+      onTap: _onTapHandler,
       child: Scaffold(
         backgroundColor: Color.fromRGBO(
           backgroundColor.red,
